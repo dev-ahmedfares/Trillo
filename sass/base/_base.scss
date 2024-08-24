@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(tap-land) {
+    font-size: 50%;// 8/16 = 50% 1rem = 8px
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--primary-light),
+    var(--primary-dark)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: var(--grey-dark-2);
+}
+
+.container {
+  max-width: 120rem;
+  min-height: 80vh;
+  margin: 8rem auto;
+  background-color: var(--grey-light-1);
+  box-shadow: var(--box-shadow);
+
+  @include respond(tap-land) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}

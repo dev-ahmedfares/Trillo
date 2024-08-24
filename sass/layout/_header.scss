@@ -1,0 +1,130 @@
+.header {
+  font-size: 1.4rem;
+  background-color: #fff;
+  border-bottom: var(--border);
+  &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      flex-wrap: wrap;
+      height: 7rem;
+
+
+
+    @include respond(xsm) {
+        align-content: space-around;
+      height: 11rem;
+      padding: 1rem 0;
+  }
+  }
+
+  &__logo {
+    margin-left: 1.6rem;
+    img {
+      height: 3.25rem;
+    }
+  }
+  .search-box {
+    flex: 0 0 38%;
+    display: flex;
+    justify-content: center;
+
+    @include respond(xsm) {
+        order: 1;
+        flex: 0 0 100%;
+      }
+    
+      input {
+      font-size: inherit;
+      font-family: inherit;
+      color: inherit;
+      border: none;
+      width: 90%;
+      padding: 0.7rem 2rem;
+      background-color: var(--grey-light-2);
+      border-radius: 100px;
+      margin-right: -3.25rem;
+      transition: all 0.2s;
+
+      &:focus {
+        outline: none;
+        width: 100%;
+        background-color: var(--grey-light-3);
+      }
+      &::-webkit-input-placeholder {
+        font-weight: 100;
+        color: var(--grey-light-4);
+      }
+    }
+    input:focus + button {
+      background-color: var(--grey-light-3);
+    }
+    &__btn {
+      border: none;
+      background-color: var(--grey-light-2);
+    }
+    &__icon {
+      width: 2rem;
+      height: 2rem;
+      fill: var(--grey-dark-3);
+    }
+  }
+
+  .nav-icons {
+    display: flex;
+    height: 100%;
+
+    @include respond(xsm) {
+        height: auto;
+    }
+    > * {
+      padding: 0 1.6rem;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    > *:hover {
+      background-color: var(--grey-light-2);
+    }
+    .icon-box {
+      position: relative;
+
+      @include respond(xsm) {
+        border-radius: 50px;
+    }
+      &__icon {
+        width: 2.25rem;
+        height: 2.25rem;
+        fill: var(--grey-dark-2);
+      }
+      .floating-item {
+        font-size: 0.8rem;
+        position: absolute;
+        top: 1.5rem;
+        left: 2.75rem;
+        background-color: var(--primary);
+        border-radius: 50%;
+        height: 1.75rem;
+        width: 1.75rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .user {
+        @include respond(xsm) {
+            border-radius: 50px;
+        }
+      img {
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+}

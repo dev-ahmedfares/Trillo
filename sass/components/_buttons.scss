@@ -1,0 +1,86 @@
+.inline-btn {
+  display: inline-block;
+  color: var(--primary);
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid currentColor;
+  transition: all 0.2s;
+  cursor: pointer;
+  padding-bottom: 2px;
+
+  @include respond(sm) {
+    margin: auto;
+  }
+
+  &:hover > span {
+    transition: margin-left 0.2s;
+    margin-left: 0.4rem;
+  }
+
+  &:hover {
+    color: var(--grey-dark-1);
+  }
+  &:focus {
+    outline: none;
+    animation: pulse 1s infinite;
+  }
+}
+
+.anim-btn {
+  position: relative;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border: none;
+  color: #fff;
+  border-radius: 100px;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-light),
+    var(--primary-dark)
+  );
+  cursor: pointer;
+  overflow: hidden;
+
+  @include respond(xsm) {
+    font-size: 1.3rem;
+  }
+  > * {
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      var(--primary-dark),
+      var(--primary-light)
+    );
+
+    p:first-child {
+      top: 0;
+    }
+    > p:last-child {
+      transform: translateY(100%);
+    }
+  }
+
+  &:focus {
+    animation: pulse 1s infinite;
+  }
+
+  > p:first-child {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    right: 0;
+    padding: 2rem 0;
+  }
+
+  > p:last-child {
+    padding: 2rem 6rem;
+
+    @include respond(xsm) {
+      padding: 2rem 4rem;
+    }
+  }
+}

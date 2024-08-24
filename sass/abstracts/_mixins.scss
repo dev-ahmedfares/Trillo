@@ -1,0 +1,26 @@
+// Media Query Desktop-first 
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == big-desktop {
+        @media screen and (min-width:"1800px") {
+            @content;
+        }
+    } @else if  $breakpoint == tap-land {
+        @media screen and (max-width:"1200px") {
+            @content;
+        }
+    } @else if  $breakpoint == tap-port {
+        @media screen and (max-width:"992px") {
+            @content;
+        }
+    } @else if  $breakpoint == sm {
+        @media screen and (max-width:"768px") {
+            @content;
+        }
+    } @else if  $breakpoint == xsm {
+        @media screen and (max-width:"600px") {
+            @content;
+        }
+    }
+}
